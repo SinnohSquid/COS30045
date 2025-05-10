@@ -1,0 +1,19 @@
+body {
+    margin-left: 32px;
+    margin-right: 64px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-bottom: 128px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+}
+
+footer {
+    color: gray;
+}

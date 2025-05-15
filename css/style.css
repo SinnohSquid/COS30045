@@ -7,13 +7,144 @@ body {
     padding-bottom: 128px;
 }
 
-h1,
-h2,
-h3 {
-    font-family: 'Lora', serif;
-    font-weight: 500;
+.sidebar h1,
+.sidebar h2,
+.sidebar h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 6969;
 }
 
 footer {
     color: gray;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    /* Default text color */
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    /* To prevent scrollbars if content exceeds viewport */
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #222222;
+    /* Darker gray */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    color: #00AEEF;
+    /* Blue color */
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.button-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.button-list li {
+    margin-bottom: 5px;
+}
+
+.button-list button {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 12px 15px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+.button-list button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    /* Initially no width */
+    background-color: #00AEEF;
+    /* The hover background color */
+    z-index: -1;
+    /* Place it behind the button's content */
+    transition: width 0.15s ease-out;
+    /* Animation for the wipe */
+    border-radius: 3px;
+}
+
+.button-list button:hover::before {
+    width: 100%;
+    /* Wipe to full width on hover */
+}
+
+.button-list button:hover {
+    background-color: #333333;
+    /* Keep original background or set to transparent if wipe is fully opaque */
+    color: #000000;
+}
+
+.button-list button.active {
+    background-color: #00AEEF;
+    color: #ffffff;
+}
+
+.button-list button.active:hover::before {
+    width: 0;
+    /* Prevent hover wipe effect on active button if desired */
+}
+
+.button-list button.active:hover {
+    background-color: #00AEEF;
+    /* Ensure active state color persists on hover */
+}
+
+
+.main-content {
+    flex-grow: 1;
+    background: #141414;
+    background: #000000;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(56, 33, 7, 1) 100%);
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    color: #fff;
+    padding: 20px;
+    overflow: auto;
+    /* Keeps the scroll behavior if content overflows */
+}
+
+.scroll-test {
+    padding-top: 200px;
+    padding-bottom: 850px;
 }

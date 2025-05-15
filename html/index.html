@@ -10,16 +10,162 @@
         rel="stylesheet">
     <title>COS30045 Assignment 3</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="/js/index.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
+    <script src="/COS30045/js/index.js"></script>
+    <link rel="stylesheet" href="/COS30045/css/style.css">
+    <script>
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
 </head>
 
 <body>
-    <h1>COS30045 Assignment 3</h1>
-    <p id="chart1"></p>
-    <br>
-    <footer>COS30045 Data Visualisation<br>
-        Assignment 3C by Group H (Seth Taylor and Sam Galea)</footer>
+    <div class="sidebar">
+        <h1>COS30045 Assignment 3</h1>
+        <h2>Click a button</h2>
+        <ul class="button-list">
+            <li><button type="button" onclick="scrollToSection('section-start')">Start of webpage</button></li>
+            <li><button type="button" onclick="scrollToSection('section-cause-of-death')">What is the cause of
+                    death?</button></li>
+            <li><button type="button" onclick="scrollToSection('section-avoidable-deaths')">How many avoidable
+                    deaths occurred?</button></li>
+            <li><button type="button" onclick="scrollToSection('section-life-expectancy')">How long is the life
+                    expectancy in some Countries?</button></li>
+
+            <li><button type="button" onclick="scrollToSection('section-example')">EXAMPLE</button></li>
+        </ul>
+        <br>
+        <footer>COS30045 Data Visualisation<br>
+            Assignment 3C by Group H (Seth Taylor and Sam Galea)</footer>
+    </div>
+
+    <div class="main-content">
+        <div class="scroll-test" id="section-start">
+            <h2>Welcome</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+            </p>
+        </div>
+        <div class="scroll-test" id="section-cause-of-death">
+            <h2>What is the leading Causes of Death in Australia?</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+            </p>
+        </div>
+        <div class="scroll-test" id="section-avoidable-deaths">
+            <h2>How many avoidable deaths occured in Australia?</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+            </p>
+        </div>
+
+        <div class="scroll-test" id="section-life-expectancy">
+            <h2>Life Expectancy</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                sem
+                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                Pulvinar
+                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+                inceptos himenaeos.
+            </p>
+        </div>
+
+        <div class="scroll-test" id="section-example">
+            <h2>example section to see what else we can do idk</h2>
+            <p>
+                peeppee poopooo
+            </p>
+        </div>
+    </div>
+
 </body>
 
 </html>

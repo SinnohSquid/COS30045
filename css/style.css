@@ -1,45 +1,46 @@
 body {
-    margin-left: 32px;
-    margin-right: 64px;
+    margin: 0;
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    padding-bottom: 128px;
+    background-color: #111827;
+    /* deep slate */
+    color: #f3f4f6;
+    /* light text */
 }
 
 .sidebar h1,
 .sidebar h2,
 .sidebar h3 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 6969;
+    font-weight: 700;
 }
 
 footer {
-    color: gray;
+    color: #9ca3af;
+    text-align: center;
+    padding: 1rem;
+    background-color: #1f2937;
 }
 
+/* Reset */
 body,
 html {
     margin: 0;
     padding: 0;
-    /* Default text color */
     height: 100%;
 }
 
+/* Layout */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
     display: flex;
     height: 100vh;
     overflow: hidden;
-    /* To prevent scrollbars if content exceeds viewport */
 }
 
+/* Sidebar */
 .sidebar {
     width: 250px;
-    background-color: #222222;
-    /* Darker gray */
+    background-color: #1f2937;
+    /* slate gray */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -48,13 +49,14 @@ body {
 }
 
 .sidebar h2 {
-    color: #00AEEF;
-    /* Blue color */
+    color: #14b8a6;
+    /* teal highlight */
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 25px;
 }
 
+/* Buttons */
 .button-list {
     list-style: none;
     padding: 0;
@@ -66,8 +68,9 @@ body {
 }
 
 .button-list button {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #1e293b;
+    /* darker slate */
+    color: #f3f4f6;
     border: none;
     padding: 12px 15px;
     text-align: left;
@@ -80,7 +83,7 @@ body {
     overflow: hidden;
     transition: color 0.3s ease;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 .button-list button::before {
@@ -90,61 +93,60 @@ body {
     left: 0;
     height: 100%;
     width: 0;
-    /* Initially no width */
-    background-color: #00AEEF;
-    /* The hover background color */
+    background-color: #14b8a6;
+    /* teal wipe */
     z-index: -1;
-    /* Place it behind the button's content */
-    transition: width 0.15s ease-out;
-    /* Animation for the wipe */
+    transition: width 0.2s ease-out;
     border-radius: 3px;
 }
 
 .button-list button:hover::before {
     width: 100%;
-    /* Wipe to full width on hover */
 }
 
 .button-list button:hover {
-    background-color: #333333;
-    /* Keep original background or set to transparent if wipe is fully opaque */
-    color: #000000;
+    background-color: #1e293b;
+    color: #000;
 }
 
 .button-list button.active {
-    background-color: #00AEEF;
+    background-color: #0f766e;
+    /* deep teal */
     color: #ffffff;
 }
 
 .button-list button.active:hover::before {
     width: 0;
-    /* Prevent hover wipe effect on active button if desired */
 }
 
 .button-list button.active:hover {
-    background-color: #00AEEF;
-    /* Ensure active state color persists on hover */
+    background-color: #14b8a6;
 }
 
-
+/* Main Content */
 .main-content {
     flex-grow: 1;
-    background: #141414;
-    background: #000000;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(56, 33, 7, 1) 100%);
-    color: #fff;
+    background: linear-gradient(0deg, #111827 0%, #0f172a 100%);
+    color: #f3f4f6;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    color: #fff;
     padding: 20px;
     overflow: auto;
-    /* Keeps the scroll behavior if content overflows */
 }
 
+/* Scroll Test */
 .scroll-test {
     padding-top: 200px;
     padding-bottom: 850px;
+}
+
+/* Optional Chart Area Styling */
+#chart1 svg {
+    background-color: #1f2937;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 1rem;
 }

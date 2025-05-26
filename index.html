@@ -10,10 +10,10 @@
         rel="stylesheet">
     <title>COS30045 Assignment 3</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="/COS30045/js/index.js"></script>
-    <script src="/COS30045/js/sbarChart_example.js"></script>
-    <script src="/COS30045/js/lineChart_lifeExpectancy.js"></script>
-    <link rel="stylesheet" href="/COS30045/css/style.css">
+    <script src="js/lineChart_lifeExpectancy.js"></script>
+    <script src="js/sbarChart_example.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <script>
         // inline js to get the menu autoscroll working, too small to have it be its own file
         function scrollToSection(id) {
@@ -195,7 +195,7 @@
                     });
                 });
             }, {
-                threshold: 0.6  // Adjust as needed; this is when 60% of the section is visible
+                threshold: 0.5  // Adjust as needed; this is when half of the section is visible
             });
 
             // Observe each section

@@ -1,4 +1,4 @@
-function init() {
+function initSbarChart() {
     // 0) Define the raw dataset here (objects, not arrays)
     var dataset = [
         { apples: 5, oranges: 10, grapes: 22 },
@@ -69,5 +69,3 @@ function sbarChart(dataset, containerId) {
         .attr("height", function (d) { return yScale(d[0]) - yScale(d[1]); }) // height = y0–y1
         .attr("width", xScale.bandwidth());
 }
-
-window.onload = init;

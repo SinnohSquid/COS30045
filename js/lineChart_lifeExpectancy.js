@@ -1,5 +1,7 @@
-function init() {
-    d3.csv("/COS30045/csv/RAW OECD Dataset - Life Expectency per year - 2000 to 2022.csv").then(function (data) {
+// lineChart_lifeExpectancy.js
+
+function initLineChart() {
+    d3.csv("../csv/RAW OECD Dataset - Life Expectency per year - 2000 to 2022.csv").then(function (data) {
         var selectedCountries = ["Australia", "Japan", "United States", "United Kingdom", "Germany", "France"];
 
         // 1) Parse and clean
@@ -102,7 +104,49 @@ function drawChart(series) {
         .style("pointer-events", "none")
         .style("opacity", 0);
 
-    // Dots and tooltips
+    // Create external popup div
+    var popup = d3.select("body")
+        .append("div")
+        .attr("id", "infoPopup")
+        .style("position", "fixed")
+        .style("top", "50%")
+        .style("left", "50%")
+        .style("transform", "translate(-50%, -50%)")
+        .style("padding", "20px")
+        .style("background", "#1f2937")
+        .style("color", "#f3f4f6")
+        .style("border", "1px solid #333")
+        .style("border-radius", "8px")
+        .style("box-shadow", "0 4px 12px rgba(0,0,0,0.25)")
+        .style("display", "none")
+        .style("z-index", 1000)
+        .style("max-width", "300px")
+        .html(`<div id="popup-content"></div><br><button id="closePopup" style="margin-top:10px;">Close</button>`);
+    // Fullscreen overlay behind popup
+    var overlay = d3.select("body")
+        .append("div")
+        .attr("id", "popupOverlay")
+        .style("position", "fixed")
+        .style("top", "0")
+        .style("left", "0")
+        .style("width", "100%")
+        .style("height", "100%")
+        .style("background", "rgba(0, 0, 0, 0.3)")
+        .style("display", "none")
+        .style("z-index", 999);
+
+
+    // Close handler
+    function closePopup() {
+        popup.style("display", "none");
+        overlay.style("display", "none");
+    }
+
+    d3.select("#closePopup").on("click", closePopup);
+    overlay.on("click", closePopup);
+
+
+    // Dots and tooltips with interactivity
     series.forEach((country, i) => {
         svg.selectAll(`.dot-${i}`)
             .data(country.values)
@@ -112,16 +156,58 @@ function drawChart(series) {
             .attr("cy", d => yScale(d.value))
             .attr("r", 3)
             .attr("fill", color(country.name))
-            .on("mouseover", (event, d) => {
+            .attr("cursor", "pointer")
+            .on("mouseover", function (event, d) {
+                d3.select(this)
+                    .transition().duration(150)
+                    .attr("r", 6);
+
                 tooltip.transition().duration(150).style("opacity", 1);
                 tooltip
                     .html(`<strong>${country.name}</strong><br>${d3.timeFormat("%Y")(d.year)}: ${d.value}`)
                     .style("left", (event.pageX + 10) + "px")
                     .style("top", (event.pageY - 28) + "px");
             })
-            .on("mouseout", () => {
+            .on("mouseout", function () {
+                d3.select(this)
+                    .transition().duration(150)
+                    .attr("r", 3);
+
                 tooltip.transition().duration(300).style("opacity", 0);
+            })
+            .on("click", function (event, d) {
+                overlay.style("display", "block");
+                popup.style("display", "block");
+
+                let extraInsight = "";
+
+                // === Start of Conditional Logic for Popup Text ===
+                // add in more as we find more information on this.
+                if (d.country === "Japan" && d.rawYear === 2022) {
+                    extraInsight = "Japan consistently has one of the highest life expectancies globally, reflecting strong healthcare and healthy lifestyles.";
+                } else if (d.country === "Australia" && d.rawYear >= 2015) {
+                    extraInsight = "Australia's life expectancy has shown steady gains in recent years, though challenges like obesity remain.";
+                } else if (d.country === "United States") {
+                    extraInsight = "Life expectancy in the US has fluctuated, with specific challenges related to certain health crises and healthcare access.";
+                } else if (d.country === "United Kingdom" && d.rawYear === 2000) {
+                    extraInsight = "At the turn of the millennium, the UK's life expectancy was on an upward trend, setting the stage for future improvements.";
+                }
+                else {
+                    extraInsight = "";
+                }
+                // === End of Conditional Logic for Popup Text ===
+
+
+                d3.select("#popup-content").html(`
+                    <h3 style="margin-top:0;">${country.name}</h3>
+                    <p><strong>Year:</strong> ${d3.timeFormat("%Y")(d.year)}</p>
+                    <p><strong>Life Expectancy:</strong> ${d.value}</p>
+                    <p style="font-size: 13px; opacity: 0.8;">
+                        ${extraInsight}
+                    </p>
+                `);
             });
+
     });
 
     // Country labels at end of each line
@@ -135,5 +221,3 @@ function drawChart(series) {
         .style("fill", d => color(d.name))
         .text(d => d.name);
 }
-
-window.onload = init;

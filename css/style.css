@@ -1,27 +1,10 @@
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #111827;
-    /* deep slate */
-    color: #f3f4f6;
-    /* light text */
+/* ----------------------------
+   🔁 RESET & BASE LAYOUT
+---------------------------- */
+* {
+    box-sizing: border-box;
 }
 
-.sidebar h1,
-.sidebar h2,
-.sidebar h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-}
-
-footer {
-    color: #9ca3af;
-    text-align: center;
-    padding: 1rem;
-    background-color: #1f2937;
-}
-
-/* Reset */
 body,
 html {
     margin: 0;
@@ -29,34 +12,50 @@ html {
     height: 100%;
 }
 
-/* Layout */
 body {
+    font-family: 'Inter', sans-serif;
+    background-color: #111827;
+    /* deep slate */
+    color: #f3f4f6;
+    /* light text */
     display: flex;
     height: 100vh;
     overflow: hidden;
 }
 
-/* Sidebar */
+/* ----------------------------
+   🧭 SIDEBAR
+---------------------------- */
 .sidebar {
-    width: 250px;
-    background-color: #1f2937;
-    /* slate gray */
+    width: 256px;
+    background-color: #1e293b;
+    /* slightly lighter slate */
     padding: 20px;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
     flex-shrink: 0;
+}
+
+.sidebar h1,
+.sidebar h2,
+.sidebar h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
 }
 
 .sidebar h2 {
     color: #14b8a6;
     /* teal highlight */
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: 600;
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
 }
 
-/* Buttons */
+/* ----------------------------
+   🔘 SIDEBAR BUTTONS
+---------------------------- */
 .button-list {
     list-style: none;
     padding: 0;
@@ -64,12 +63,11 @@ body {
 }
 
 .button-list li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .button-list button {
     background-color: #1e293b;
-    /* darker slate */
     color: #f3f4f6;
     border: none;
     padding: 12px 15px;
@@ -78,12 +76,12 @@ body {
     cursor: pointer;
     font-size: 14px;
     border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
     position: relative;
     z-index: 1;
     overflow: hidden;
     transition: color 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
 }
 
 .button-list button::before {
@@ -94,7 +92,6 @@ body {
     height: 100%;
     width: 0;
     background-color: #14b8a6;
-    /* teal wipe */
     z-index: -1;
     transition: width 0.2s ease-out;
     border-radius: 3px;
@@ -111,8 +108,9 @@ body {
 
 .button-list button.active {
     background-color: #0f766e;
-    /* deep teal */
     color: #ffffff;
+    border-left: 4px solid #14b8a6;
+    padding-left: 11px;
 }
 
 .button-list button.active:hover::before {
@@ -123,7 +121,14 @@ body {
     background-color: #14b8a6;
 }
 
-/* Main Content */
+.button-list button:focus {
+    outline: 2px solid #14b8a6;
+    outline-offset: 2px;
+}
+
+/* ----------------------------
+   📊 MAIN CONTENT AREA
+---------------------------- */
 .main-content {
     flex-grow: 1;
     background: linear-gradient(0deg, #111827 0%, #0f172a 100%);
@@ -131,22 +136,69 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /* Center horizontally */
     justify-content: flex-start;
-    align-items: stretch;
-    padding: 20px;
+    padding: 40px 20px;
     overflow: auto;
 }
 
-/* Scroll Test */
+/* Center any chart containers inside main content */
+.chart {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+/* ----------------------------
+   📄 CONTENT CONSTRAINTS
+---------------------------- */
+
+/* Optional wrapper for paragraph text / articles */
+.content-wrapper {
+    width: 100%;
+    max-width: 760px;
+    /* around 75–80 characters wide for readability */
+    margin: 0 auto;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* You can also limit h1/h2/etc. inside if you want */
+.content-wrapper h1,
+.content-wrapper h2,
+.content-wrapper h3 {
+    max-width: 100%;
+    text-align: left;
+}
+
+/* ----------------------------
+   💬 TOOLTIPS
+---------------------------- */
+.tooltip {
+    font-size: 13px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid #334155;
+    color: #f3f4f6;
+    border-radius: 6px;
+    padding: 8px 12px;
+    pointer-events: none;
+    font-family: 'Inter', sans-serif;
+    opacity: 0;
+}
+
+/* ----------------------------
+   📄 MISCELLANEOUS
+---------------------------- */
+footer {
+    color: #9ca3af;
+    text-align: center;
+    padding: 1rem;
+    background-color: #1f2937;
+}
+
 .scroll-test {
     padding-top: 200px;
     padding-bottom: 850px;
-}
-
-/* Optional Chart Area Styling */
-#chart1 svg {
-    background-color: #1f2937;
-    border: 1px solid #334155;
-    border-radius: 6px;
-    padding: 1rem;
 }

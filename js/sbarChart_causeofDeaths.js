@@ -226,7 +226,7 @@ function drawCauseOfDeathChart(data, keys, causeOfDeathEventMap) { // NEW: Accep
 
             // NEW: Get event description
             var eventKey = `${year}_${category}`;
-            var eventDescription = causeOfDeathEventMap.get(eventKey) || "No specific event data available for this point.";
+            var eventDescription = causeOfDeathEventMap.get(eventKey) || "";
 
             d3.select("#popup-content_causeOfDeath").html(`
                 <h3 style="margin-top:0;">Cause of Death Details</h3>

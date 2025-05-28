@@ -28,6 +28,8 @@
 
 </head>
 
+<!-- ... <head> section unchanged ... -->
+
 <body>
     <div class="sidebar">
         <h1>COS30045 Assignment 3</h1>
@@ -36,179 +38,84 @@
             <li><button type="button" onclick="scrollToSection('section-start')" data-target="section-start">Start of
                     webpage</button></li>
             <li><button type="button" onclick="scrollToSection('section-cause-of-death')"
-                    data-target="section-cause-of-death">What is the cause of
-                    death?</button></li>
+                    data-target="section-cause-of-death">What is the cause of death?</button></li>
             <li><button type="button" onclick="scrollToSection('section-avoidable-deaths')"
-                    data-target="section-avoidable-deaths">How many avoidable
-                    deaths occurred?</button></li>
+                    data-target="section-avoidable-deaths">How many avoidable deaths occurred?</button></li>
             <li><button type="button" onclick="scrollToSection('section-life-expectancy')"
-                    data-target="section-life-expectancy">How long is the life
-                    expectancy in some Countries?</button></li>
+                    data-target="section-life-expectancy">How long is the life expectancy?</button></li>
         </ul>
         <br>
-        <footer>COS30045<br>
+        <footer>
+            COS30045<br>
             Data Visualisation<br>
-            Assignment 3C <br>
+            Assignment 3C<br>
             by Group H<br>
-            (Seth Taylor and Sam Galea)</footer>
+            (Seth Taylor and Sam Galea)
+        </footer>
         <h3>COLOURS (and charts) NOT FINAL</h3>
     </div>
 
     <div class="main-content">
-        <div class="scroll-test" id="section-start">
+        <!-- Section: Start -->
+        <div class="scroll-test content-wrapper" id="section-start">
             <h2>Welcome</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-            </p>
-        </div>
-        <div class="scroll-test" id="section-cause-of-death">
-            <h2>What is the leading Causes of Death in Australia?</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-                <br>
-            </p>
-            <p id="chart_causeOfDeath"></p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-            </p>
-        </div>
-        <div class="scroll-test" id="section-avoidable-deaths">
-            <h2>How many avoidable deaths occured in Australia?</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-                <br>
-            </p>
-            <p id="chart_avoidableDeaths"></p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-            </p>
+            <p>... your intro content here ...</p>
         </div>
 
-        <div class="scroll-test" id="section-life-expectancy">
+        <!-- Section: Cause of Death -->
+        <div class="scroll-test content-wrapper" id="section-cause-of-death">
+            <h2>What is the leading Cause of Death in Australia?</h2>
+            <p>... your paragraph content ...</p>
+            <div class="chart" id="chart_causeOfDeath"></div>
+
+            <div class="content-wrapper">
+                <p>... your follow-up content ...</p>
+            </div>
+        </div>
+
+        <!-- Section: Avoidable Deaths -->
+        <div class="scroll-test content-wrapper" id="section-avoidable-deaths">
+            <h2>How many avoidable deaths occurred in Australia?</h2>
+            <p>... your paragraph content ...</p>
+            <div class="chart" id="chart_avoidableDeaths"></div>
+
+            <div class="content-wrapper">
+                <p>... your follow-up content ...</p>
+            </div>
+        </div>
+
+        <!-- Section: Life Expectancy -->
+        <div class="scroll-test content-wrapper" id="section-life-expectancy">
             <h2>Life Expectancy</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-                <br>
-            </p>
-            <p id="chart_lifeExpec"></p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
-                sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
-                inceptos himenaeos.
-            </p>
+            <p>... your paragraph content ...</p>
+            <div class="chart" id="chart_lifeExpec"></div>
+            <div class="content-wrapper">
+                <p>... your follow-up content ...</p>
+            </div>
         </div>
     </div>
+
     <script>
-        // little thingy to have the button whose section is visible be highlighted
+        // Highlight active button as you scroll
         document.addEventListener("DOMContentLoaded", function () {
             const buttons = document.querySelectorAll('.button-list button');
             const sections = document.querySelectorAll('.scroll-test');
 
-            // Observer callback
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     const id = entry.target.id;
-
                     buttons.forEach(btn => {
                         if (btn.dataset.target === id) {
-                            if (entry.isIntersecting) {
-                                btn.classList.add('active');
-                            } else {
-                                btn.classList.remove('active');
-                            }
+                            btn.classList.toggle('active', entry.isIntersecting);
                         }
                     });
                 });
-            }, {
-                threshold: 0.5  // Adjust as needed; this is when half of the section is visible
-            });
+            }, { threshold: 0.5 });
 
-            // Observe each section
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+            sections.forEach(section => observer.observe(section));
         });
     </script>
 </body>
+
 
 </html>

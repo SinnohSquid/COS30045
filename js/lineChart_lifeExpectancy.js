@@ -182,18 +182,59 @@ function drawChart(series, eventMap) {
                 overlay.style("display", "block");
                 popup.style("display", "block");
 
+                const values = country.values;
+                const index = values.findIndex(v => v.year.getTime() === d.year.getTime());
+                const prev = index > 0 ? values[index - 1].value : null;
+
+                let trendText = "";
+                if (prev !== null && !isNaN(prev)) {
+                    const diff = d.value - prev;
+                    const formatted = Math.abs(diff).toFixed(2);
+
+                    if (diff > 0) {
+                        trendText = `<span style="color: #10b981;">▲ Increased by ${formatted}</span>`;
+                    } else if (diff < 0) {
+                        trendText = `<span style="color: #ef4444;">▼ Decreased by ${formatted}</span>`;
+                    } else {
+                        trendText = `<span style="color: #d1d5db;">No change from previous year.</span>`;
+                    }
+                } else {
+                    trendText = `<span style="color: #9ca3af;">No previous year data available.</span>`;
+                }
+
                 var eventKey = `${country.name}_${d.rawYear}`;
                 var eventDescription = eventMap.get(eventKey) || "No specific event data available for this point.";
 
+                // Calculate previous value if available
+                let countryData = country.values;
+                let index2 = countryData.findIndex(entry => entry.rawYear === d.rawYear);
+                let prevValue = index > 0 ? countryData[index2 - 1].value : null;
+
+                let changeInfo = "";
+                if (prevValue !== null) {
+                    let diff = d.value - prevValue;
+                    let percentage = ((diff / prevValue) * 100).toFixed(2);
+                    let direction = diff > 0 ? "↑ increase" : (diff < 0 ? "↓ decrease" : "→ no change");
+                    let color = diff > 0 ? "#22c55e" : (diff < 0 ? "#ef4444" : "#facc15");
+
+                    changeInfo = `<p><strong>Change:</strong> <span style="color:${color};">${direction} (${percentage}%)</span></p>`;
+                } else {
+                    changeInfo = "<p><em>No previous year data</em></p>";
+                }
+
                 d3.select("#popup-content").html(`
-                    <h3 style="margin-top:0;">${country.name}</h3>
-                    <p><strong>Year:</strong> ${d3.timeFormat("%Y")(d.year)}</p>
-                    <p><strong>Life Expectancy:</strong> ${d.value}</p>
-                    <p style="font-size: 13px; opacity: 0.85;">
-                        ${eventDescription}
-                    </p>
-                `);
+    <h3 style="margin-top:0;">${country.name}</h3>
+    <p><strong>Year:</strong> ${d3.timeFormat("%Y")(d.year)}</p>
+    <p><strong>Life Expectancy:</strong> ${d.value.toFixed(2)} years</p>
+    ${changeInfo}
+    <p style="font-size: 13px; opacity: 0.85;">
+        ${eventDescription}
+    </p>
+`);
+
             });
+
+
     });
 
     // Legend

@@ -224,19 +224,37 @@ function drawCauseOfDeathChart(data, keys, causeOfDeathEventMap) { // NEW: Accep
             const category = d3.select(event.currentTarget.parentNode).datum().key;
             var year = d.data.Year;
 
-            // NEW: Get event description
+            // Get event description
             var eventKey = `${year}_${category}`;
             var eventDescription = causeOfDeathEventMap.get(eventKey) || "";
 
+            // Calculate previous year's value
+            let prevYearData = data.find(item => item.Year === year - 1);
+            let prevValue = prevYearData ? prevYearData[category] || 0 : null;
+            let changeInfo = '';
+
+            if (prevValue !== null) {
+                let diff = deaths - prevValue;
+                let percentageChange = ((diff / prevValue) * 100).toFixed(1);
+                let color = diff > 0 ? "#ef4444" : (diff < 0 ? "#22c55e" : "#facc15");
+                let direction = diff > 0 ? "↑ increase" : (diff < 0 ? "↓ decrease" : "→ no change");
+
+                changeInfo = `<p><strong>Change from previous year:</strong> <span style="color: ${color};">${direction} (${percentageChange}%)</span></p>`;
+            } else {
+                changeInfo = `<p><em>No previous year data available.</em></p>`;
+            }
+
             d3.select("#popup-content_causeOfDeath").html(`
-                <h3 style="margin-top:0;">Cause of Death Details</h3>
-                <p><strong>Year:</strong> ${year}</p>
-                <p><strong>Cause:</strong> ${category}</p>
-                <p><strong>Deaths:</strong> ${deaths} deaths</p>
-                <p style="font-size: 13px; opacity: 0.85;">
-                    ${eventDescription}
-                </p>
-            `);
+    <h3 style="margin-top:0;">Cause of Death Details</h3>
+    <p><strong>Year:</strong> ${year}</p>
+    <p><strong>Cause:</strong> ${category}</p>
+    <p><strong>Deaths:</strong> ${deaths} deaths</p>
+    ${changeInfo}
+    <p style="font-size: 13px; opacity: 0.85;">
+        ${eventDescription}
+    </p>
+`);
+
         });
 
     // --- Legend ---

@@ -201,12 +201,31 @@ function drawAvoidableDeathsChart(data, keys) {
         var category = stackedData.find(s => s.some(segment => segment === d)).key;
         var year = d.data.Year; // Get the year from the original data object
 
-        tooltip.html(`<strong>Year:</strong> ${year}<br><strong>${category}:</strong> ${deaths} deaths`)
-            .style("left", (event.pageX + 15) + "px") // Position tooltip relative to mouse
+        // --- Trend Comparison Logic ---
+        let prevYearData = data.find(item => item.Year === year - 1);
+        let prevValue = prevYearData ? prevYearData[category] || 0 : null;
+
+        let changeInfo = "";
+        if (prevValue !== null) {
+            let diff = deaths - prevValue;
+            let percentage = ((diff / prevValue) * 100).toFixed(1);
+            let direction = diff > 0 ? "↑ increase" : (diff < 0 ? "↓ decrease" : "→ no change");
+            let color = diff > 0 ? "#ef4444" : (diff < 0 ? "#22c55e" : "#facc15");
+
+            changeInfo = `<br><strong>Change:</strong> <span style="color:${color};">${direction} (${percentage}%)</span>`;
+        } else {
+            changeInfo = "<br><em>No previous year data</em>";
+        }
+
+        tooltip.html(
+            `<strong>Year:</strong> ${year}<br><strong>${category}:</strong> ${deaths} deaths${changeInfo}`
+        )
+            .style("left", (event.pageX + 15) + "px")
             .style("top", (event.pageY - 28) + "px")
             .transition()
             .duration(200)
-            .style("opacity", 1); // Make visible
+            .style("opacity", 1);
+
     }
 
     // Function to hide the tooltip

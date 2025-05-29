@@ -5,8 +5,8 @@ function initCauseOfDeathChart() {
     // Load both the cause of death data and the event data
     Promise.all([
         d3.csv("../csv/OECD Dataset - Categorised Cause of Death by year in Australia - 2000 to 2022 - Filtered - Raw.csv"),
-        d3.csv("../csv/CauseOfDeathEvents.csv") // NEW: Load event data
-    ]).then(([data, eventData]) => { // NEW: Destructure both loaded datasets
+        d3.csv("../csv/CauseOfDeathEvents.csv") // Load event data
+    ]).then(([data, eventData]) => { // Destructure both loaded datasets
         // Filter for 'Total' sex and parse data
         var filteredData = data
             .filter(d => d.Sex === "Total" && +d.Deaths > 0)
@@ -29,7 +29,7 @@ function initCauseOfDeathChart() {
             return obj;
         }).sort((a, b) => a.Year - b.Year);
 
-        // NEW: Map for cause of death events
+        // Map for cause of death events
         var causeOfDeathEventMap = new Map();
         eventData.forEach(d => {
             var year = parseInt(d.Year);
@@ -40,13 +40,13 @@ function initCauseOfDeathChart() {
             }
         });
 
-        drawCauseOfDeathChart(reshapedData, uniqueCauses, causeOfDeathEventMap); // NEW: Pass the event map
+        drawCauseOfDeathChart(reshapedData, uniqueCauses, causeOfDeathEventMap); // Pass the event map
     }).catch(function (error) {
         console.error("Error loading or parsing CSV for cause of death chart:", error);
     });
 }
 
-function drawCauseOfDeathChart(data, keys, causeOfDeathEventMap) { // NEW: Accept event map as argument
+function drawCauseOfDeathChart(data, keys, causeOfDeathEventMap) { // Accept event map as argument
     var containerId = "#chart_causeOfDeath";
     d3.select(containerId).html("");
 

@@ -27,7 +27,7 @@ body {
    🧭 SIDEBAR
 ---------------------------- */
 .sidebar {
-    width: 256px;
+    width: 300px;
     background-color: #1e293b;
     /* slightly lighter slate */
     padding: 20px;
@@ -165,7 +165,7 @@ body {
     font-size: 16px;
 }
 
-/* You can also limit h1/h2/etc. inside if you want */
+/* optional limiters */
 .content-wrapper h1,
 .content-wrapper h2,
 .content-wrapper h3 {
@@ -193,7 +193,7 @@ body {
 ---------------------------- */
 footer {
     color: #9ca3af;
-    text-align: center;
+    text-align: left;
     padding: 1rem;
     background-color: #1f2937;
 }

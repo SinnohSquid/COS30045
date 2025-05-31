@@ -18,7 +18,7 @@
     <script>
         // inline js to get the menu autoscroll working, too small to have it be its own file
         function scrollToSection(id) {
-            const section = document.getElementById(id);
+            var section = document.getElementById(id);
             if (section) {
                 section.scrollIntoView({ behavior: 'smooth' });
             }
@@ -107,12 +107,12 @@
     <script>
         // Highlight active button as you scroll
         document.addEventListener("DOMContentLoaded", function () {
-            const buttons = document.querySelectorAll('.button-list button');
-            const sections = document.querySelectorAll('.scroll-test');
+            var buttons = document.querySelectorAll('.button-list button');
+            var sections = document.querySelectorAll('.scroll-test');
 
-            const observer = new IntersectionObserver((entries) => {
+            var observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    const id = entry.target.id;
+                    var id = entry.target.id;
                     buttons.forEach(btn => {
                         if (btn.dataset.target === id) {
                             btn.classList.toggle('active', entry.isIntersecting);

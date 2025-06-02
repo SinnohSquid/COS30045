@@ -1,8 +1,8 @@
 function initLineChart() {
     // Load both the life expectancy data and the event data
     Promise.all([
-        d3.csv("../csv/RAW OECD Dataset - Life Expectency per year - 2000 to 2022.csv"),
-        d3.csv("../csv/Events by Year.csv")
+        d3.csv("csv/RAW OECD Dataset - Life Expectency per year - 2000 to 2022.csv"),
+        d3.csv("csv/Events by Year.csv")
     ]).then(([lifeData, eventData]) => {
         var selectedCountries = ["Australia", "Japan", "United States", "United Kingdom", "Germany", "France"];
 

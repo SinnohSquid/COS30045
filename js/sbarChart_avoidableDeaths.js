@@ -5,7 +5,7 @@ function initAvoidableDeathsChart() {
     // Define the path to your CSV file
     // Assuming 'js' and 'csv' folders are siblings to the 'index.html' file
     // and this JS file is inside the 'js' folder.
-    d3.csv("../csv/OECD Dataset - Avoidable Deaths in Australia - 2000 to 2022 - FIltered - Raw.csv").then(function (data) {
+    d3.csv("csv/OECD Dataset - Avoidable Deaths in Australia - 2000 to 2022 - FIltered - Raw.csv").then(function (data) {
         // Filter out 'Avoidable mortality' and non-'Total' sex data
         // Also ensure 'Deaths' and 'Year' are numbers
         var filteredData = data

@@ -32,7 +32,8 @@
         <h1>Understanding Mortality Trends</h1>
         <h2>Life Expectancy and Mortality in Australia</h2>
         <ul class="button-list">
-            <li><button type="button" onclick="scrollToSection('section-start')" data-target="section-start">Welcome</button></li>
+            <li><button type="button" onclick="scrollToSection('section-start')"
+                    data-target="section-start">Welcome</button></li>
             <li><button type="button" onclick="scrollToSection('section-life-expectancy')"
                     data-target="section-life-expectancy">Life Expectancy</button></li>
             <li><button type="button" onclick="scrollToSection('section-cause-of-death')"
@@ -59,29 +60,41 @@
         <div class="scroll-test content-wrapper" id="section-start">
             <h2>Welcome!</h2>
             <p>
-                This website delves into key health statistics from the <a href="https://data-explorer.oecd.org/vis?lc=en&tm=health%20status&pg=0&hc[Measure]=&hc[Topic]=&snb=50&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_HEALTH_STAT%40DF_HEALTH_STATUS&df[ag]=OECD.ELS.HD&df[vs]=1.0&dq=.A..Y.Y0........&pd=2015%2C&to[TIME_PERIOD]=false">OECD Health Dataset</a>. The key questions that we aim to answer are:<br><br>
+                This website delves into key health statistics from the <a
+                    href="https://data-explorer.oecd.org/vis?lc=en&tm=health%20status&pg=0&hc[Measure]=&hc[Topic]=&snb=50&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_HEALTH_STAT%40DF_HEALTH_STATUS&df[ag]=OECD.ELS.HD&df[vs]=1.0&dq=.A..Y.Y0........&pd=2015%2C&to[TIME_PERIOD]=false">OECD
+                    Health Dataset</a>. The key questions that we aim to answer are:<br><br>
                 - How does the average life expectancy in Australia compare to other major countries?<br>
                 - What are the leading causes of death in Australia?<br>
                 - How has life expectancy changed over time?<br><br>
-                Through these visualisations, we hope to present a large, complex dataset in a readable and engaging way.<br><br>
-                Discover significant health trends and find answers to these compelling questions as you navigate this site!
+                Through these visualisations, we hope to present a large, complex dataset in a readable and engaging
+                way.<br><br>
+                Discover significant health trends and find answers to these compelling questions as you navigate this
+                site!
             </p>
         </div>
 
         <!-- Section: Life Expectancy -->
         <div class="scroll-test content-wrapper" id="section-life-expectancy">
             <h2>Life Expectancy</h2>
-            <p>Life expectancy at birth is a crucial indicator of a nation's overall health and socio-economic development. 
-                The visualisation below tracks life expectancy trends from 2000 to 2022, offering a comparison of Australia (light blue) with other OECD countries, 
-                including the US, UK, Germany, Japan, and France. The data presented is derived from the OECD Health Status Dataset, 
+            <p>Life expectancy at birth is a crucial indicator of a nation's overall health and socio-economic
+                development.
+                The visualisation below tracks life expectancy trends from 2000 to 2022, offering a comparison of
+                Australia (light blue) with other OECD countries,
+                including the US, UK, Germany, Japan, and France. The data presented is derived from the OECD Health
+                Status Dataset,
                 which forms the foundation for all the insights into long-term population health.
             </p>
             <h3>Life Expectancy of Australia, compared to other select OECD Countries</h3>
             <div class="chart" id="chart_lifeExpec"></div>
             <div class="content-wrapper">
-                <p>In the visualisation above, each coloured line represents a different country. As you trace each line, you can observe major changes in each nation over time.<br>
-                    To enhance your experience, click any of the year markers on each country's line to see major events for that specific country. This will allow for a deeper understanding of life expectancy over time.<br>
-                    One event that had a major effect on overall life expectancy across all countries in the OECD dataset was the COVID-19 pandemic in 2019-2020, where the data clearly shows a drop in all countries except for Australia.
+                <p>In the visualisation above, each coloured line represents a different country. As you trace each
+                    line, you can observe major changes in each nation over time.<br>
+                    To enhance your experience, click any of the year markers on each country's line to see major events
+                    for that specific country. This will allow for a deeper understanding of life expectancy over
+                    time.<br>
+                    One event that had a major effect on overall life expectancy across all countries in the OECD
+                    dataset was the COVID-19 pandemic in 2019-2020, where the data clearly shows a drop in all countries
+                    except for Australia.
                 </p>
             </div>
         </div>
@@ -89,9 +102,12 @@
         <!-- Section: Cause of Death -->
         <div class="scroll-test content-wrapper" id="section-cause-of-death">
             <h2>What is the leading Cause of Death in Australia?</h2>
-            <p>Understanding the primary causes of death in Australia provides insights into health challenges and public health priorities. 
-                This bar chart illustrates the trends in the leading categories of mortality in Australia spanning from 2000 to 2022. 
-                The data has been selected from the OECD Health Status dataset  and categorised into "Other", "External Sources", "Mental Health", "Neoplasms", and "Diseases".
+            <p>Understanding the primary causes of death in Australia provides insights into health challenges and
+                public health priorities.
+                This bar chart illustrates the trends in the leading categories of mortality in Australia spanning from
+                2000 to 2022.
+                The data has been selected from the OECD Health Status dataset and categorised into "Other", "External
+                Sources", "Mental Health", "Neoplasms", and "Diseases".
             </p>
             <h3>Causes of Death in Australia between 2000 and 2022, categorised</h3>
             <div class="chart" id="chart_causeOfDeath"></div>
@@ -99,14 +115,17 @@
             <div class="content-wrapper">
                 <p>The categories in the above chart group a large amount of different broad causes of death.<br>
                     <br>
-                    The coloured segments represent the number of deaths attributed to that specific broad cause category. These are high-level groupings; 
-                    for instance, 'Diseases' would encompass a range of different illnesses such as COVID-19, 
-                    while 'External Sources' would include various non-illness related causes such as assault related deaths or car accidents. <br>
+                    The coloured segments represent the number of deaths attributed to that specific broad cause
+                    category. These are high-level groupings;
+                    for instance, 'Diseases' would encompass a range of different illnesses such as COVID-19,
+                    while 'External Sources' would include various non-illness related causes such as assault related
+                    deaths or car accidents. <br>
                     <br>
-                    The project's documentation indicates these were categorised to group data for clearer insights. You will notice a data gap for 2005; 
-                    this is intentionally represented to reflect missing data for some Australian records in that year due to differences in data classification 
+                    The project's documentation indicates these were categorised to group data for clearer insights. You
+                    will notice a data gap for 2005;
+                    this is intentionally represented to reflect missing data for some Australian records in that year
+                    due to differences in data classification
                     standards (specifically the ICD-10 not being fully utilised then).
-                    
                 </p>
             </div>
         </div>
@@ -114,19 +133,25 @@
         <!-- Section: Avoidable Deaths -->
         <div class="scroll-test content-wrapper" id="section-avoidable-deaths">
             <h2>How many of those deaths that occured were avoidable?</h2>
-            <p>Avoidable deaths are a critical measure of a healthcare system's effectivenes sand the impact of public health care.
-                These are the deaths that could have been averted through timely and effective healthcare interventions. <br>
-                The data has been seperated into Treatable and Preventable mortality in order to categorise these types of mortality</p>
+            <p>Avoidable deaths are a critical measure of a healthcare system's effectivenes sand the impact of public
+                health care.
+                These are the deaths that could have been averted through timely and effective healthcare interventions.
+                <br>
+                The data has been seperated into Treatable and Preventable mortality in order to categorise these types
+                of mortality
+            </p>
             <h3>Total avoidable deaths in Australia between 2000 and 2022, sorted by preventable and treatable deaths
             </h3>
             <div class="chart" id="chart_avoidableDeaths"></div>
             <div class="content-wrapper">
-                <p> An observable trend in the data shows that both treatable and preventable mortality in Australia increased between 2006 and 2022. 
-                    Specifically, treatable deaths rose from 12,152 in 2006 to 12,779 in 2022, while preventable deaths increased from 21,039 in 2006 to 27,672 in 2022. <br>
+                <p> An observable trend in the data shows that both treatable and preventable mortality in Australia
+                    increased between 2006 and 2022.
+                    Specifically, treatable deaths rose from 12,152 in 2006 to 12,779 in 2022, while preventable deaths
+                    increased from 21,039 in 2006 to 27,672 in 2022. <br>
                     <br>
-                    While the population growth from 2006 until 2022 in australia approximately 26.08% the total avoidable deaths growth in the same time period grew by 21.87%.
+                    While the population growth from 2006 until 2022 in australia approximately 26.08% the total
+                    avoidable deaths growth in the same time period grew by 21.87%.
                     This means that there was a slowler overall growth of preventable deaths by population.
-                    
                 </p>
             </div>
         </div>
@@ -134,12 +159,15 @@
         <!-- Section: Sources -->
         <div class="scroll-test content-wrapper" id="section-sources">
             <h2>Sources</h2>
-            <p>
-                <ul>
-                    <li><strong>Australian Bureau of Statistics (ABS) 2023</strong>, National, state and territory population, December 2023, population, cat. no. 3101.0, ABS, Canberra, viewed 03 April 2025, https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release.</li>
-                    <li><strong>Organisation for Economic Co-operation and Development (OECD) 2025</strong>, OECD Health Statistics: Health Status, OECD, Paris, viewed 02 April 2025, https://www.oecd.org/en/data/datasets/oecd-health-statistics.html</li>
-                </ul>
-            </p>
+            <ul>
+                <li><strong>Australian Bureau of Statistics (ABS) 2023</strong>, National, state and territory
+                    population, December 2023, population, cat. no. 3101.0, ABS, Canberra, viewed 03 April 2025,
+                    https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release.
+                </li>
+                <li><strong>Organisation for Economic Co-operation and Development (OECD) 2025</strong>, OECD Health
+                    Statistics: Health Status, OECD, Paris, viewed 02 April 2025,
+                    https://www.oecd.org/en/data/datasets/oecd-health-statistics.html</li>
+            </ul>
         </div>
     </div>
 

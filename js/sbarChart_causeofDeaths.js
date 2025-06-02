@@ -4,8 +4,8 @@
 function initCauseOfDeathChart() {
     // Load both the cause of death data and the event data
     Promise.all([
-        d3.csv("../csv/OECD Dataset - Categorised Cause of Death by year in Australia - 2000 to 2022 - Filtered - Raw.csv"),
-        d3.csv("../csv/CauseOfDeathEvents.csv") // Load event data
+        d3.csv("csv/OECD Dataset - Categorised Cause of Death by year in Australia - 2000 to 2022 - Filtered - Raw.csv"),
+        d3.csv("csv/CauseOfDeathEvents.csv") // Load event data
     ]).then(([data, eventData]) => { // Destructure both loaded datasets
         // Filter for 'Total' sex and parse data
         var filteredData = data
@@ -134,7 +134,7 @@ function drawCauseOfDeathChart(data, keys, causeOfDeathEventMap) { // Accept eve
         const category = d3.select(event.currentTarget.parentNode).datum().key;
         var year = d.data.Year;
 
-        tooltip.html(`<strong>Year:</strong> ${year}<br><strong>${category}:</strong> ${deaths} deaths`)
+        tooltip.html(`<strong>Year:</strong> ${year}<br><strong>${category}:</strong> ${deaths} deaths <br> Click for more info`)
             .style("left", (event.pageX + 15) + "px")
             .style("top", (event.pageY - 28) + "px")
             .transition()
